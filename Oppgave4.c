@@ -1,3 +1,5 @@
+//Kode utviklet for AVR128DB48
+
 //Inkludering 
 #include <avr/io.h> //Inkluderer io bibliotek
 #define F_CPU (4000000UL) //Frekvensen prosessoren går på
