@@ -5,12 +5,14 @@
 #include <util/delay.h>
 #include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 void USART3_init(void);
 void USART3_sendChar(char c);
 void USART3_sendString(char *str);
-//void USART3_printChar(char c, FILE *stream);
 
+
+static FILE USART_stream = FDEV_SETUP_STREAM(USART3_sendChar, NULL, _FDEV_SETUP_WRITE);
 
 int main(void)
 {
@@ -51,11 +53,4 @@ void USART3_sendString(char *str)
 	}
 }
 
-static FILE USART_stream = FDEV_SETUP_STREAM(USART3_printChar, NULL, _FDEV_SETUP_WRITE);
-
-//static int USART3_printChar(char c, FILE *stream)
-//{
-	//USART3_sendChar(c);
-	//return 0;
-//}
 
